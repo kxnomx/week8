@@ -14,6 +14,10 @@ var puck_x = 210;
 var puck_y = 210;
 var puck = document.getElementById('puck');
 var speed = 50;
+var width = 50;
+var height = 50;
+
+
 
 document.getElementById('puck').style.left = puck_x+'px';
 puck.style.top = puck_y+'px';
@@ -70,4 +74,43 @@ document.getElementById('right').addEventListener('click', function() {
 });
    
    
+document.getElementById('SMALLER').addEventListener('click', function() {
+    if (puck_x < 600) {
+    puck_x += speed;
+   puck.style.left = puck_x+'px';
+   logCoordinates();
+   checkCollision();
+    }
+  
+ });
    
+   
+document.getElementById('BIGGER').addEventListener('click', function() {
+    if (puck_x < 600) {
+    puck_x += speed;
+  puck.style.left = puck_x+'px';
+   logCoordinates();
+   checkCollision();
+    }
+  
+ });
+/*
+  document.getElementById('BIGGER').addEventListener('click', function() {
+        puck -= 10;
+        document.getElementById('puck').style.top = puck + 'px';
+        puck -= 10;
+        document.getElementById('puck').style.top = puck + 'px';
+      }
+    );
+  */
+  
+  function ChangeSize () {
+    var puck= document.getElementById("puck");
+    puck.style.width="100px";
+    puck.style.height="100px";
+  }
+  
+  function OnResize(puck) {
+   var w= puck.offsetWidth;
+   var h= puck.offsetHeight;
+  }

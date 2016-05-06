@@ -61,3 +61,23 @@
 #updown {
   margin-top: -15px;
 }
+
+#scale a {
+    display: block;
+  width: 40px;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 5px 2px;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.5);
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  line-height: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#scale a:hover {
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+}
