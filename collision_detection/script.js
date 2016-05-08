@@ -14,8 +14,8 @@ var puck_x = 210;
 var puck_y = 210;
 var puck = document.getElementById('puck');
 var speed = 50;
-var width = 50;
-var height = 50;
+var width = 30;
+var height = 30;
 
 
 
@@ -73,11 +73,21 @@ document.getElementById('right').addEventListener('click', function() {
     }
 });
    
-   
+   document.getElementById('BIGGER').addEventListener('click', function() {
+    if (puck_x < 600) {
+    puck_x += width;
+  puck.style.width = puck+'px';
+  puck.style.height = puck+'px';
+   logCoordinates();
+   checkCollision();
+    }
+    
+    
 document.getElementById('SMALLER').addEventListener('click', function() {
     if (puck_x < 600) {
-    puck_x += speed;
-   puck.style.left = puck_x+'px';
+     puck_x += width;
+   puck.style.width = puck-'px';
+   puck.style.height = puck-'px';
    logCoordinates();
    checkCollision();
     }
@@ -85,10 +95,16 @@ document.getElementById('SMALLER').addEventListener('click', function() {
  });
    
    
-document.getElementById('BIGGER').addEventListener('click', function() {
+   
+  
+ });
+   
+   /*
+    document.getElementById('SMALLER').addEventListener('click', function() {
     if (puck_x < 600) {
-    puck_x += speed;
-  puck.style.left = puck_x+'px';
+     puck_x += width;
+  puck.style.width = '50%';
+  puck.style.height = 'auto'; 
    logCoordinates();
    checkCollision();
     }
@@ -114,3 +130,5 @@ document.getElementById('BIGGER').addEventListener('click', function() {
    var w= puck.offsetWidth;
    var h= puck.offsetHeight;
   }
+  
+  
